@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <script src="jquery.min.js"></script>
+
+    <style type="text/css">
+
+        #circle{
+            width:100px;
+            height:100px;
+            border-radius: 50%;
+            background-color:cornflowerblue;
+            
+        }
+
+        .square{
+            width:150px;
+            height:150px;
+            background-color: green;
+            margin-top: 10px;
+        }
+
+        #txt2{
+            display:none;
+         }
+
+
+    </style>
+</head>
+<body>
+   
+<div id="circle"></div>
+
+    <p id="txt1">first text fadeout</p>
+    <button id="fadeout">fade out</button>
+
+    <p id="txt2">fade in</p>
+    <button id="fadeIn">fade in</button>
+
+   <script type="text/javascript">
+      $("#fadeout").click(function(){
+          $("#txt1").fadeOut();
+      })
+
+      $("#fadeIn").click(function(){
+          $("#txt2").fadeIn();
+      })
+
+      $("#circle").click(function(){
+          $(this).animate({
+              width:"250px",
+              height:"250px"
+
+          },5000 , function(){
+              $(this).css("background-color", "red");
+          }
+          
+          );
+      })
+   </script>
+</body>
+</html>
